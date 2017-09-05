@@ -3,8 +3,6 @@ title: Hexo 多终端部署及更新到 GitHub 方法
 date: 2017-09-05 23:07:33
 tags:
 ---
-# auspbro.github.io
-## Hexo 多终端部署及更新到 GitHub 方法
 
 ### 一、关于搭建的流程
 1. 创建仓库，https://auspbro.github.io/
