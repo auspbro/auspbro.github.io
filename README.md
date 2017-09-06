@@ -12,8 +12,7 @@
 ```
 
 npm install hexo
-
-、hexo init
+hexo init
 
 、npm install
 
