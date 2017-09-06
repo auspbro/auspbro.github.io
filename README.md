@@ -31,7 +31,7 @@ $ git push origin hexo-blog
 
 ### 三、本地资料丢失后的流程当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤
 1. 使用 git clone https://github.com/auspbro/auspbro.github.io.git 拷贝仓库（默认分支为 hexo-blog）；
-2. 在本地新拷贝的 auspbro.github.io 文件夹下通过 Git bash 依次执行下列指令：
+2. 在本地新拷贝的 auspbro.github.io 文件夹下通过 Git bash 依次执行下列指令(Mac 用户记得加 sudo)：
 ```
 $ npm install -g hexo-cli
 $ npm install
