@@ -13,6 +13,7 @@ tags:
 * Index / Stage：暂存区
 * Repository：仓库区（或本地仓库）
 * Remote：远程仓库
+<!-- more -->
 
 ## 一、新建代码库
 ```
@@ -27,7 +28,6 @@ $ git init [project-name]
 # 下载一个项目和它的整个代码历史
 $ git clone [url]
 ```
-<!-- more -->
 ## 二、配置
 Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 ```
