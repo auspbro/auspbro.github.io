@@ -6,7 +6,7 @@ tags:
 经常使用 Git ，但是很多命令老不用会忘，给自己列下常用的 Git Cheatsheet 用来备忘。
 一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。
 
-![git-workflow](../img/git-workflow.png)
+![git-workflow](/img/git-workflow.png)
 
 下面是我整理的常用 Git 命令清单,几个专用名词的译名如下。
 * Workspace：工作区

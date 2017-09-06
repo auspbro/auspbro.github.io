@@ -6,7 +6,7 @@ tags:
 
 # Stay hungry. Stay foolish.
 
-![stay-hungry-stay-foolish](../img/Stay-hungry-Stay-foolish.jpg)
+![stay-hungry-stay-foolish](/img/Stay-hungry-Stay-foolish.jpg)
 
 乔布斯在斯坦福大学毕业演讲中说过，他最喜欢的一句话叫做"Stay hungry, Stay foolish"。
 <!-- more -->
@@ -20,4 +20,4 @@ tags:
 > 的阴影在地球表面的移动，另一方面是与此同时人们在地球上的经历，他们看到日出。我脑海中的画面是，一个漫游者日出时站在无名的路上，太阳升起来了，火车从旁边> 呼啸而过。这个年轻人的心情是如此自由，他有点饿（hungry），也知道得很清楚，自己对前面的道路一无所知（foolish）。"
 >                                                                                               --Stewart Brand
 
-![地球产品目录 Cover](../img/地球产品目录cover.jpg)
+![地球产品目录 Cover](/img/地球产品目录cover.jpg)
