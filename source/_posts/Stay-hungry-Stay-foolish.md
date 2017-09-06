@@ -9,6 +9,7 @@ tags:
 ![stay-hungry-stay-foolish](/img/Stay-hungry-Stay-foolish.jpg)
 
 乔布斯在斯坦福大学毕业演讲中说过，他最喜欢的一句话叫做"Stay hungry, Stay foolish"。
+
 <!-- more -->
 
 > "Stewart和他的人出了好几期《地球产品目录》（Whole Earth Catalog），然后不打算再出了，他们推出了最后一期。那时是70年代中期，我跟你们一样大。那一期的>  封底有一张照片，上面是清晨的乡间道路，就是那种如果你喜欢漫游，你会经过的道路。照片下面有一句话：'Stay Hungry, Stay Foolish'。这是他们的临别赠言。
