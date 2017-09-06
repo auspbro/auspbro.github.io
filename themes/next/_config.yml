@@ -69,6 +69,7 @@ menu_icons:
   categories: th
   schedule: calendar
   tags: tags
+  search: search
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
@@ -102,7 +103,7 @@ scheme: Pisces
 #   When an globe mask icon presenting up means that the item has no mapping icon.
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
