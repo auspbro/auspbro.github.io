@@ -3,7 +3,7 @@
 
 ### 一、关于搭建的流程
 1. 创建仓库，https://auspbro.github.io/
-2. 创建两个分支：master(默认分支) 与 hexo
+2. 创建两个分支：master(默认分支) 与 hexo-blog
 3. 在 GitHub 页面上 Setting-branch 中设置 hexo-blog 为默认分支（因为我们只需要手动管理这个分支上的 Hexo 网站源文件）
 4. 使用git clone https://github.com/auspbro/auspbro.github.io.git 拷贝仓库
 5. 拷贝完成后先备份 .git 隐藏文件夹到其他地方，后面还需要。否则执行 hexo init 会提示文件夹不是空的
