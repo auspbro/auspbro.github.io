@@ -20,7 +20,7 @@ tags:
 ## 4. skip Win8 Metro UI
 
 ## 5. set Win8 test mode
-
+<!-- more -->
 ## 6. turn off Hibernate (admin command: powercfg -h off)
 
 ## 7. run media player firstly
