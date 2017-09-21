@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="读本文之前请注意：  本文的目标是提供一些vim的使用技巧，利用这些技巧可以提高vim的操作效率。部分技巧在vi上也可以使用，但是现在基本上都是用vim了。    本文是整理和总结使用技巧，而非讲解vim入门，因此不会涉及最基本的使用，例如如何上移或下移光标，对此类操作请参阅任何一本vim或者vi教程。    本文阅读对象是了解了vim的基本操作，而希望高效地利用vim进行工作的人。熟练使用vim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim 使用技巧">
+<meta property="og:url" content="https://auspbro.github.io/2017/09/22/vim使用技巧/index.html">
+<meta property="og:site_name" content="Zen Notes">
+<meta property="og:description" content="读本文之前请注意：  本文的目标是提供一些vim的使用技巧，利用这些技巧可以提高vim的操作效率。部分技巧在vi上也可以使用，但是现在基本上都是用vim了。    本文是整理和总结使用技巧，而非讲解vim入门，因此不会涉及最基本的使用，例如如何上移或下移光标，对此类操作请参阅任何一本vim或者vi教程。    本文阅读对象是了解了vim的基本操作，而希望高效地利用vim进行工作的人。熟练使用vim">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-21T16:20:15.040Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vim 使用技巧">
+<meta name="twitter:description" content="读本文之前请注意：  本文的目标是提供一些vim的使用技巧，利用这些技巧可以提高vim的操作效率。部分技巧在vi上也可以使用，但是现在基本上都是用vim了。    本文是整理和总结使用技巧，而非讲解vim入门，因此不会涉及最基本的使用，例如如何上移或下移光标，对此类操作请参阅任何一本vim或者vi教程。    本文阅读对象是了解了vim的基本操作，而希望高效地利用vim进行工作的人。熟练使用vim">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://auspbro.github.io/2017/09/22/vim使用技巧/"/>
+
+
+
+
+
+  <title>vim 使用技巧 | Zen Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Zen Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Stay hungry, Stay foolish!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://auspbro.github.io/2017/09/22/vim使用技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiang Xue">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zen Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vim 使用技巧</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-22T00:15:20+08:00">
+                2017-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="读本文之前请注意："><a href="#读本文之前请注意：" class="headerlink" title="读本文之前请注意："></a>读本文之前请注意：</h2><ul>
+<li><ol>
+<li>本文的目标是提供一些vim的使用技巧，利用这些技巧可以提高vim的操作效率。部分技巧在vi上也可以使用，但是现在基本上都是用vim了。</li>
+</ol>
+</li>
+<li><ol>
+<li>本文是整理和总结使用技巧，而非讲解vim入门，因此不会涉及最基本的使用，例如如何上移或下移光标，对此类操作请参阅任何一本vim或者vi教程。</li>
+</ol>
+</li>
+<li><ol>
+<li>本文阅读对象是了解了vim的基本操作，而希望高效地利用vim进行工作的人。熟练使用vim的人自然不必细读，如果能留下您的宝贵意见，本人将感激不尽。</li>
+</ol>
+</li>
+<li><ol>
+<li>本文由本人搜集整理，转载请注明出处</li>
+</ol>
+</li>
+</ul>
+<p>本文一般情况下用（里边的字母一般大小写无所谓,除非特别注明）表示按住ctrl同时按下相关字母，命令前加一个i表示在插入模式下用这个命令</p>
+<h3 id="1-选定文字-拷贝粘贴"><a href="#1-选定文字-拷贝粘贴" class="headerlink" title="1. 选定文字 / 拷贝粘贴"></a>1. 选定文字 / 拷贝粘贴</h3><p>v为可视模式,可以选定多行。选定多行之后，可以用yy或者dd等等进行拷贝和剪切。<br>p 是粘贴<br>y 和d 可以直接拷贝或者剪切选定的内容<br>yw是拷贝一个单词<br>如果要复制整行的最简单办法就是V,y,p 就行了<br>v是可以选定一行任意个字符的,V是行选定的,一次一整行，然后通过向下或向上移动光标而选定多行。<br>对于v选定的,拷贝后就是这么多,选多少就拷贝多少,而V选定的,粘贴的话会自动换到下一行<br>命令模式下,也是块选定,不过是列块选定</p>
+<h3 id="2-折叠代码"><a href="#2-折叠代码" class="headerlink" title="2. 折叠代码"></a>2. 折叠代码</h3><a id="more"></a>
+<p>可以zf进行折叠, 用zo打开折叠,也可以方向键向右打开折叠,zc 关闭折叠(只要在被折叠的块中的任一个语句就行)</p>
+<h3 id="3-缩进代码"><a href="#3-缩进代码" class="headerlink" title="3. 缩进代码"></a>3. 缩进代码</h3><p>是右缩进<br>按v选定后按=就是自动格式化代码,自动缩进,内部的递归的缩进都做到了<br>行左移&gt;，该命令用于调整源码缩进格式简便快速。</p>
+<h3 id="4-移动光标"><a href="#4-移动光标" class="headerlink" title="4. 移动光标"></a>4. 移动光标</h3><p>%是从大括号的开始移动到大括号的结束位置<br>:后边加行号就是跳到这一行<br>    光标返回到以前的位置。相当于光标移动的“撤销”<br>    光标返回到后来的位置。相当于光标移动的“恢复”</p>
+<h3 id="5-多文件编辑-缓冲区命令"><a href="#5-多文件编辑-缓冲区命令" class="headerlink" title="5. 多文件编辑 / 缓冲区命令"></a>5. 多文件编辑 / 缓冲区命令</h3><p>vim下每一个打开的文件对应一个缓冲区（buffer）。<br>多文件编辑会有两种情形，一种是在进入 vim 前所用的参数就是多个文件（这种情形称为 argument list）。另一种情形是进入 vim 后另外再开其它的文件（称为 buffer list）。不过都可以统称为buffer。</p>
+<p>5.1 打开文件<br>vi flname1 flname2… flnameN<br>将多个文件调入缓冲，是 argument list。<br>:e filename<br>这是在进入 vim 后，在不离开 vim 的情形下再开其它文件，只要您要编辑的档案是在目前目录，Tab 补全键还是可以使用。是buffer list。<br>注意：:e 或者:new 或者:split 后边可以跟目录,这样就可以在目录下慢慢找要打开的文件了<br>5.2 缓冲区跳转<br>:n   编辑下一个文件。<br>:2n 编辑下二个文件。<br>:N   编辑前一个文件。注意，这种用法只能用于 argument list 的情形。<br>:rew 回到首文件<br>:args 查看当前编辑缓冲文件状态<br>:e# 或 Ctrl-^   编辑前一个档案，用于两文件互相编辑时相当好用。这种用法不管是 argument list 或buffer list 档案间皆可使用。 使用Ctrl－^ 命令更便捷，但如终端类型不正确该功能将无效。<br>用:ls来显示缓冲区中的文件，编号后边有#的代表是前一个文件，可以通过:e#来进入，有%a的代表是当前文件，什么也没有的可以通过:bn来进入，这里的n代表文件编号。<br>:b文件名或编号   移至该文件。<br>在 :ls 中就会出示各文件的编号，这个编号在未离开 vim 前是不会变的。这个指令 elvis 也是可以使用。当然 :e#编号 也是可以的，这样的用法则是所有 vi clone 都通用了。<br>在 buffers 中，减号 - 表示这个 buffer 并未载入，不过，不必担心，载入相当快速的。加号 + 表示这个 buffer 已经修改过了。<br>:bn   buffer next。这里的n代表字母n<br>:bl   buffer last。<br>以上两个指令 elvis 不适用。<br>如果您是使用 vim 的 GUI，那就在菜单上就会有 Buffers 这个选项，可以很容易的知道及移动各buffer 间。</p>
+<p>5.3 移除缓冲区<br>:bd(elete)   buffer 在未离开 vim 前是不会移除的，可使用这个指令移除。其实移除它干什么呢？vim是您在叫用时才会载入的，因此这些 buffers 并不是像 cache 一般要占内存的。<br>5.4 重新编辑<br>放弃一修改过的文件，重新编辑。<br>(1)使用命令　:q!强行退出后再vi flname重新进入。<br>(2)使用命令　:e!强行重编辑更便捷。这样也是会打开文件，但会放弃目前编辑文件的改变，否则如果文件已有变动，vim 预设是不让您随便离开的。:e! 后不接什么的话，代表舍弃一切修改，重新载入编辑中文件。</p>
+<p>5.5 其他命令<br>:files 或 :buffers 或 :ls   会列出目前 buffer 中的所有文件。<br>在 elvis 中可使用 :b 来叫出 buffers。<br>:f 或 Ctrl-g   显示目前编辑的文件名、是否经过修改及目前光标所在之位置。<br>:f 文件名   改变编辑中的文件名。(file)<br>:r 文件名   在光标所在处插入一个文件的内容。(read)<br>:35 r 文件名   将文件插入至 35 行之后。<br>gf   这是 vim 的特殊打开文件的方法，会打开光标所在处的 word 为名的文件，当然，这个文件要在当前目录内，否则会创建新文件。</p>
+<h3 id="6-查找命令"><a href="#6-查找命令" class="headerlink" title="6. 查找命令"></a>6. 查找命令</h3><p>用/查找单词后,n可以跳到下一个,N则是上一个,:nohls可以取消高亮<br>查找时,:set ignorecase”项让VIM忽略大小写，“:set noignorecase” 来关闭这项功能。</p>
+<h3 id="7-修改文字"><a href="#7-修改文字" class="headerlink" title="7. 修改文字"></a>7. 修改文字</h3><p>cw:删除一个单词并进入插入模式,cc:删除一行并进入插入模式。<br>r:然后输入的字母将替换当前字母并保持命令模式,R则是不停的替换(一个挨着一个)。<br>0到行首,$到行尾。</p>
+<h3 id="8-函数间跳转"><a href="#8-函数间跳转" class="headerlink" title="8. 函数间跳转"></a>8. 函数间跳转</h3><p>ctrl+]和ctrl+T分别是查找函数的定义和返回,好像需要ctag的支持<br>i   跳转到光标所指标识符的定义行,是打开一个新的小窗口显示,记住要加个i,最好是找自己项目下的文件,否则找库函数的话还不如man.<br>大写 K        看光标所指标识符的 man 帮助页</p>
+<h3 id="9-窗口命令"><a href="#9-窗口命令" class="headerlink" title="9. 窗口命令"></a>9. 窗口命令</h3><p>= ctrl+w<br>:split 文件名 同时在一个页面显示多个文件的内容,类似多窗口,用切换当前窗口<br>f   切分显示光标在处的文件名，VIM 会在 path 中搜索该文件名，比如常用它打开 #include 语句中的文件<br><em>   当同时打开几个文件时，按 </em> 使当前窗口最大化<br>用Ctrl-W命令指定光标移动：<br>      Ctrl-W +       扩大窗口<br>      Ctrl-W -       缩小窗口<br>      Ctrl-W h       移动到窗口左边<br>      Ctrl-W j       移动到窗口下边<br>      Ctrl-W k       移动到窗口上边<br>      Ctrl-W l       移动到窗口右边<br>等于是按下后,松开键盘,再按下一个命令就可以了.<br>如果要关闭分割窗口可以用:close，剩下只有一个窗口的话就不能关了。<br>多窗口是split，像用e打开多个文件是将文件放在缓冲区中。</p>
+<h3 id="10-自动完成"><a href="#10-自动完成" class="headerlink" title="10. 自动完成"></a>10. 自动完成</h3><p>i   向上搜索，补全一个词<br>i   向下搜索，补全一个词<br>i 补全一行。<br>比如你写过一行 for (int i = 0; i 即可。如果补全出来的不是你想要的那一行，你可以按  或  选择上一个或下一个匹配行i   在文件系统中搜索，补全一个文件名<br>如果按  或  补全一个词，在当前文件中没有找到匹配，VIM 将搜索 #include 语句中的文件，而文件的位置将在 path 中搜索。<br>i   把上一行对应列的字符抄下来<br>i   把下一行对应列的字符抄上来,这两个都可以一直按下去,到了行尾自己会停的.</p>
+<h3 id="11-注释整块内容"><a href="#11-注释整块内容" class="headerlink" title="11. 注释整块内容"></a>11. 注释整块内容</h3><p>注释块的方法:<br>选定要注释掉的行   I   //   Esc<br>I之后输入的东西就是插入到选定的行前边的,直至Esc.<br>要去掉注释的办法:选定注释符//,然后d<br>列块选定后I是在前边都插入,A是在后边都插入<br>是按列块模式的选定,是行选定,v是普通选定</p>
+<h3 id="12-其他命令"><a href="#12-其他命令" class="headerlink" title="12. 其他命令"></a>12. 其他命令</h3><p>u可以撤销上一步操作, ctrl+r可以恢复<br>i命令执行一个普通模式的命令，执行完毕后回到插入模式，不用多次Esc<br>i后续字符   输入特殊的 ASCII 字符或键。<br>.        在光标当前位置处重复上一次操作<br>:!命令行         执行一条外部命令</p>
+<hr>
+<p>我是 vim 粉丝, 用了许久, 有一些自己的感受, 又到处挖到一些别人的技巧. 感觉对 vim 粉丝比较有用, 就把它记在这儿. 希望借此文套出大家自己的巧活, 就正应了抛砖引玉的古话了.<br>先稍为介绍一下 vim. vi 是 unix/linux 下极为普遍的一种文本编辑器, 大部分机器上都有. vi 有各种变种, 在不同的机器上常用不同的变种软件. 其中 vim 比较好用也用得比较广泛. vim 是 Vi IMproved 的缩写, 表示更好的 vi. 我个人觉得它是非常好的编辑器(为了避免 Emacs 粉丝挑眼, 就不说最好了). 没用过的也建议试试看, 当然 vim 对编写文本文件很方便好用, 比如编写程序, html文档等等, 却不能用来编写 word 文档.<br>关于 vim 的安装, 基本使用方法等网络上能搜出许多, 就不在这里罗嗦了, 要是对 vim 有兴趣, 那就看看这里(中文文档):<br><a href="http://vcd.gro.clinux.org/" target="_blank" rel="external">http://vcd.gro.clinux.org/</a><br>本文就说些其中比较有用, 比较常用的命令, 若能熟练运用这些命令, 那么会发现编辑文件很舒服.<br>说明:<br>以下的例子中 xxx 表示在命令模式下输入 xxx 并回车<br>以下的例子中 :xxx 表示在扩展模式下输入 xxx 并回车<br>小括号中的命令表示相关命令.<br>在编辑模式或可视模式下输入的命令会另外注明.</p>
+<h3 id="1-查找"><a href="#1-查找" class="headerlink" title="1. 查找"></a>1. 查找</h3><p>   /xxx(?xxx)       表示在整篇文档中搜索匹配xxx的字符串, / 表示向下查找, ? 表示<br>                   向上查找.其中xxx可以是正规表达式,关于正规式就不多说了.<br>                   一般来说是区分大小写的, 要想不区分大小写, 那得先输入<br>                   :set ignorecase<br>                   查找到以后, 再输入 n 查找下一个匹配处, 输入 N 反方向查找.<br>   <em>(#)             当光标停留在某个单词上时, 输入这条命令表示查找与该单词匹配的<br>                   下(上)一个单词. 同样, 再输入 n 查找下一个匹配处, 输入 N 反方<br>                   向查找.<br>   g</em>(g#)           此命令与上条命令相似, 只不过它不完全匹配光标所在处的单词, 而<br>                   是匹配包含该单词的所有字符串.<br>   gd               本命令查找与光标所在单词相匹配的单词, 并将光标停留在文档的非<br>                   注释段中第一次出现这个单词的地方.<br>   %                本命令查找与光标所在处相匹配的反括号, 包括 () [] {}<br>   f(F)x            本命令表示在光标所在行进行查找, 查找光标右(左)方第一个x字符.<br>                   找到后:<br>                   输入 ; 表示继续往下找<br>                   输入 , 表示反方向查找</p>
+<h3 id="2-快速移动光标"><a href="#2-快速移动光标" class="headerlink" title="2. 快速移动光标"></a>2. 快速移动光标</h3><pre><code>在 vi 中, 移动光标和编辑是两件事, 正因为区分开来, 所以可以很方便的进行光标定
+</code></pre><p>位和编辑. 因此能更快一点移动光标是很有用的.<br>   w(e)             移动光标到下一个单词.<br>   b                移动光标到上一个单词.<br>   0                移动光标到本行最开头.<br>   ^                移动光标到本行最开头的字符处.<br>   $                移动光标到本行结尾处.<br>   H                移动光标到屏幕的首行.<br>   M                移动光标到屏幕的中间一行.<br>   L                移动光标到屏幕的尾行.<br>   gg               移动光标到文档首行.<br>   G                移动光标到文档尾行.<br>   c-f              (即 ctrl 键与 f 键一同按下) 本命令即 page down.<br>   c-b              (即 ctrl 键与 b 键一同按下, 后同) 本命令即 page up.<br>   ‘’               此命令相当有用, 它移动光标到上一个标记处, 比如用 gd, * 等查<br>                   找到某个单词后, 再输入此命令则回到上次停留的位置.<br>   ‘.               此命令相当好使, 它移动光标到上一次的修改行.<br>   `.               此命令相当强大, 它移动光标到上一次的修改点.</p>
+<h3 id="3-拷贝-删除与粘贴"><a href="#3-拷贝-删除与粘贴" class="headerlink" title="3. 拷贝, 删除与粘贴"></a>3. 拷贝, 删除与粘贴</h3><pre><code>在 vi 中 y 表示拷贝, d 表示删除, p 表示粘贴. 其中拷贝与删除是与光标移动命令
+</code></pre><p>结合的, 看几个例子就能够明白了.<br>   yw               表示拷贝从当前光标到光标所在单词结尾的内容.<br>   dw               表示删除从当前光标到光标所在单词结尾的内容.<br>   y0               表示拷贝从当前光标到光标所在行首的内容.<br>   d0               表示删除从当前光标到光标所在行首的内容.<br>   y$               表示拷贝从当前光标到光标所在行尾的内容.<br>   d$               表示删除从当前光标到光标所在行尾的内容.<br>   yfa              表示拷贝从当前光标到光标后面的第一个a字符之间的内容.<br>   dfa              表示删除从当前光标到光标后面的第一个a字符之间的内容.<br>   特殊地:<br>   yy               表示拷贝光标所在行.<br>   dd               表示删除光标所在行.<br>   D                表示删除从当前光标到光标所在行尾的内容.<br>   关于拷贝, 删除和粘贴的复杂用法与寄存器有关, 可以自行查询.</p>
+<h3 id="4-数字与命令"><a href="#4-数字与命令" class="headerlink" title="4. 数字与命令"></a>4. 数字与命令</h3><pre><code>在 vi 中数字与命令结合往往表示重复进行此命令, 若在扩展模式的开头出现则表示行
+</code></pre><p>号定位. 如:<br>   5fx              表示查找光标后第 5 个 x 字符.<br>   5w(e)            移动光标到下五个单词.<br>   5yy              表示拷贝光标以下 5 行.<br>   5dd              表示删除光标以下 5 行.<br>   y2fa             表示拷贝从当前光标到光标后面的第二个a字符之间的内容.<br>   :12,24y          表示拷贝第12行到第24行之间的内容.<br>   :12,y            表示拷贝第12行到光标所在行之间的内容.<br>   :,24y            表示拷贝光标所在行到第24行之间的内容. 删除类似.</p>
+<h3 id="5-快速输入字符"><a href="#5-快速输入字符" class="headerlink" title="5. 快速输入字符"></a>5. 快速输入字符</h3><pre><code>在 vi 中, 不要求你输入每一个字符, 可以有很多种方法快速输入一些字符.
+使用 linux/unix 的同学一定有一个经验, 在命令行下输入命令时敲入头几个字符再按
+</code></pre><p>TAB 系统就会自动将剩下的字符补齐, 假如有多个匹配则会打印出来. 这就是著名的命令<br>补齐(其实windows中也有文件名补齐功能). vi 中有许多的字符串补齐命令, 非常方便.<br>   c-p(c-n)         在编辑模式中, 输入几个字符后再输入此命令则 vi 开始向上(下)搜<br>                   索开头与其匹配的单词并补齐, 不断输入此命令则循环查找. 此命令<br>                   会在所有在这个 vim 程序中打开的文件中进行匹配.<br>   c-x-l            在编辑模式中, 此命令快速补齐整行内容, 但是仅在本窗口中出现的<br>                   文档中进行匹配.<br>   c-x-f            在编辑模式中, 这个命令表示补齐文件名. 如输入:<br>                   /usr/local/tom 后再输入此命令则它会自动匹配出:<br>                   /usr/local/tomcat/<br>   abbr             即缩写. 这是一个宏操作, 可以在编辑模式中用一个缩写代替另一个<br>                   字符串. 比如编写java文件的常常输入 System.out.println, 这很<br>                   是麻烦, 所以应该用缩写来减少敲字. 可以这么做:<br>                   :abbr sprt System.out.println<br>                   以后在输入sprt后再输入其他非字母符号, 它就会自动扩展为System.<br>                   out.println</p>
+<h3 id="6-替换"><a href="#6-替换" class="headerlink" title="6. 替换"></a>6. 替换</h3><pre><code>替换是 vi 的强项, 因为可以用正规表达式来匹配字符串.以下提供几个例子.
+</code></pre><p>   :s/aa/bb/g       将光标所在行出现的所有包含 aa 的字符串中的 aa 替换为 bb<br>   :s/\/bb/g   将光标所在行出现的所有 aa 替换为 bb, 仅替换 aa 这个单词<br>   :%s/aa/bb/g      将文档中出现的所有包含 aa 的字符串中的 aa 替换为 bb<br>   :12,23s/aa/bb/g 将从12行到23行中出现的所有包含 aa 的字符串中的 aa 替换为 bb<br>   :12,23s/^/#/     将从12行到23行的行首加入 # 字符<br>   :%s= <em>$==        将所有行尾多余的空格删除<br>   :g/^\s</em>$/d        将所有不包含字符(空格也不包含)的空行删除.</p>
+<h3 id="7-多文件编辑"><a href="#7-多文件编辑" class="headerlink" title="7. 多文件编辑"></a>7. 多文件编辑</h3><pre><code>在一个 vim 程序中打开很多文件进行编辑是挺方便的.
+</code></pre><p>   :sp(:vsp) 文件名     vim 将分割出一个横(纵)向窗口, 并在该窗口中打开新文件.<br>                       从 vim6.0 开始, 文件名可以是一个目录的名称, 这样, vim 会<br>                       把该目录打开并显示文件列表, 在文件名上按回车则在本窗口打<br>                       开该文件, 若输入 O 则在新窗口中打开该文件, 输入 ? 可以看<br>                       到帮助信息.<br>   :e 文件名            vim 将在原窗口中打开新的文件, 若旧文件编辑过, 会要求保存.<br>   c-w-w                vim 分割了好几个窗口怎么办? 输入此命令可以将光标循环定位<br>                       到各个窗口之中.<br>   :ls                  此命令查看本 vim 程序已经打开了多少个文件, 在屏幕的最下方<br>                       会显示出如下数据:<br>                       1    %a       “usevim.html”          行 162<br>                       2    #        “xxxxxx.html”          行 0<br>                       其中:<br>                       1                表示打开的文件序号, 这个序号很有用处.<br>                       %a               表示文件代号, % 表示当前编辑的文件,</p>
+<pre><code>                # 表示上次编辑的文件
+&quot;usevim.html&quot;    表示文件名.
+行 162           表示光标位置.
+</code></pre><p>   :b 序号(代号)        此命令将指定序号(代号)的文件在本窗口打开, 其中的序号(代号)<br>                       就是用 :ls 命令看到的.<br>   :set diff            此命令用于比较两个文件, 可以用<br>                       :vsp filename<br>                       命令打开另一个文件, 然后在每个文件窗口中输入此命令,就能看<br>                       到效果了.</p>
+<h3 id="8-宏替换"><a href="#8-宏替换" class="headerlink" title="8. 宏替换"></a>8. 宏替换</h3><pre><code>vi 不仅可以用 abbr 来替换文字, 也可以进行命令的宏定义. 有些命令输起来很费劲,
+</code></pre><p>因此我把它们定义到 - 上, 这样就很方便了.这些配置可以预先写到 ~/.vimrc<br>(windows 下为 $VIM/_vimrc) 中, 写进去的时候不用写前面的冒号.<br>   :nmap  :nohls               取消被搜索字串的高亮<br>   :nmap  w                   命令模式下转移光标到不同窗口<br>   :imap                  输入模式下运行<br>   :nmap  :%s= *$==           删除所有行尾多余的空格.<br>   :imap                同上<br>   :java 中: (注, 这里为什么说 java 中, 因为以下定义对其他文件格式不起作用, 下文<br>             会说到如何实现这一点)<br>   :nmap  :comp javac:mak -d . %<br>        此命令用 javac 编译 java 文件, 它会自动将光标定位到出错点. 不过这需要定<br>        义一个 javac.vim 文件在 $VIM/compiler 下, 在 javac.vim 里面只有两行字:<br>           setlocal makeprg=javac<br>           setlocal errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#<br>   :nmap  :comp ant:mak<br>        此命令用 ant 编译 java 文件, 它会自动将光标定位到出错点. 一般来说, 安装<br>        vim 后已经有了compiler/ant.vim文件, 因此这个命令可以直接使用. 但是需要<br>        在当前目录下有 build.xml 文件, 当然还必须安装 ant 才行.<br>   :nmap  :cl                  此命令用于查看所有的编译错误.<br>   :imap<br>   :nmap  :cc                  此命令用于查看当前的编译错误.<br>   :imap<br>   :nmap  :cn                  此命令用于跳到下一个出错位置.<br>   :imap<br>   :nmap  :cp                  此命令用于跳到上一个出错位置.<br>   :imap<br>   :nmap  :JavaBrowser<br>        此命令用于在窗口左部分割出一个新窗口, 里面的内容是 java 的资源树, 包括<br>        本文件中出现的类, 类的成员变量及成员方法, 就好像 JCreator 表现的那样.<br>        在这个窗口中输入 ? 会看到帮助. 嘿嘿, 很好用, 不过需要 ctags 支持.<br>   :imap  </p>
+<h3 id="9-TAB"><a href="#9-TAB" class="headerlink" title="9. TAB"></a>9. TAB</h3><pre><code>TAB 就是制表符, 单独拿出来做一节是因为这个东西确实很有用.
+&gt;                   输入此命令则光标所在行向右移动一个 tab.
+5&gt;&gt;                  输入此命令则光标后 5 行向右移动一个 tab.
+:12,24&gt;              此命令将12行到14行的数据都向右移动一个 tab.
+:12,24&gt;&gt;             此命令将12行到14行的数据都向右移动两个 tab.
+那么如何定义 tab 的大小呢? 有人愿意使用 8 个空格位, 有人用4个, 有的用2个.
+有的人希望 tab 完全用空格代替, 也有的人希望 tab 就是 tab. 没关系, vim 能
+帮助你.以下的设置一般也都先写入配置文件中, 免得老敲.
+:set shiftwidth=4    设置自动缩进 4 个空格, 当然要设自动缩进先.
+:set sts=4           即设置 softtabstop 为 4. 输入 tab 后就跳了 4 格.
+:set tabstop=4       实际的 tab 即为 4 个空格, 而不是缺省的 8 个.
+:set expandtab       在输入 tab 后, vim 用恰当的空格来填充这个 tab.
+</code></pre><h3 id="10-autocmd"><a href="#10-autocmd" class="headerlink" title="10. autocmd"></a>10. autocmd</h3><pre><code>这个命令十分的强大, 可以用这个命令实现对不同的文件格式应用不同的配置; 可以
+</code></pre><p>在新建文件时自动添加上版权声明等等. 这些命令一般定义在 ~/.vimrc 这样的配置文件<br>里面. 由于他很强大, 所以我不能给出很具体的说明, 只能举几个例子, 详细的请看帮助.<br>   :autocmd!                删除所有之前的自动命令.<br>   autocmd FileType         java   source ~/.vim/files/java.vim<br>   autocmd FileType         java   source ~/.vim/files/jcommenter.vim<br>     以上两条命令让我在打开 java 文件时才应用后面提到的两个配置文件.<br>   autocmd BufNewFile       <em>.java   0r ~/.vim/files/skeletons/java.skel<br>     以上这条命令让我在新建 java 文件时自动加入 java.skel 文件的内容.<br>   autocmd BufNewFile       </em>.java   normal gnp<br>     以上这条命令让我在新建 java 文件时自动运行 gnp 命令, 这个命令进行一些特殊化<br>     处理, 比如将新 java 文件中的 <strong>date</strong> 替换成今天的日期什么的.</p>
+<h3 id="11-常用脚本"><a href="#11-常用脚本" class="headerlink" title="11. 常用脚本"></a>11. 常用脚本</h3><pre><code>在 vim.sf.net 你可以发现很多脚本(script), 这些脚本常常有让你意想不到的作用.
+</code></pre><p>我常用的有:<br>     jcommenter.vim         自动加入 javadoc 风格的注释.<br>     JBrowser.vim           类资源浏览. C, C++ 等可以用 Tlist<br>     还有许多有用的, 比如 checkstyle.vim 可以检验你的编程风格, jad.vim 可以直接<br>     反编译 .class 文件等等.</p>
+<h3 id="12-常用配置"><a href="#12-常用配置" class="headerlink" title="12. 常用配置"></a>12. 常用配置</h3><pre><code>在~/.vimrc 配置文件中你常常需要一些个性化配置. 比如上面写的一些宏定义, 一些
+</code></pre><p>autocmd 定义等等. 比如:<br>     set suffixes=.bak,~,.o,.h,.info,.swp,.aux,.bbl,.blg,.dvi,.lof,.log,.lot,.ps,.toc<br>         这样在vim中打开文件时, 按 tab 键补齐文件名时它会忽略上述文件.<br>     set nu           显示行号<br>     set ai           设置自动缩进<br>     map Y y$         让 Y 和 D 一样, 要不然 Y 的本意和 yy 一样.</p>
+<h3 id="13-其他"><a href="#13-其他" class="headerlink" title="13. 其他"></a>13. 其他</h3><pre><code>还有许多有意思的命令, 记录在这里免得忘记.
+.                                                重复上次编辑命令.
+:g/^/exec &quot;s/^/&quot;.strpart(line(&quot;.&quot;).&quot; &quot;, 0, 4)    在行首插入行号
+:runtime! syntax/2html.vim                       转换 txt 成 html, 会按照你的颜色配置来转 
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/如何实现有线连公司内网无线连接外网/" rel="next" title="如何实现有线连公司内网无线连接外网">
+                <i class="fa fa-chevron-left"></i> 如何实现有线连公司内网无线连接外网
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Xiang Xue" />
+          <p class="site-author-name" itemprop="name">Xiang Xue</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读本文之前请注意："><span class="nav-number">1.</span> <span class="nav-text">读本文之前请注意：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-选定文字-拷贝粘贴"><span class="nav-number">1.1.</span> <span class="nav-text">1. 选定文字 / 拷贝粘贴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-折叠代码"><span class="nav-number">1.2.</span> <span class="nav-text">2. 折叠代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-缩进代码"><span class="nav-number">1.3.</span> <span class="nav-text">3. 缩进代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-移动光标"><span class="nav-number">1.4.</span> <span class="nav-text">4. 移动光标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-多文件编辑-缓冲区命令"><span class="nav-number">1.5.</span> <span class="nav-text">5. 多文件编辑 / 缓冲区命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-查找命令"><span class="nav-number">1.6.</span> <span class="nav-text">6. 查找命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-修改文字"><span class="nav-number">1.7.</span> <span class="nav-text">7. 修改文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-函数间跳转"><span class="nav-number">1.8.</span> <span class="nav-text">8. 函数间跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-窗口命令"><span class="nav-number">1.9.</span> <span class="nav-text">9. 窗口命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-自动完成"><span class="nav-number">1.10.</span> <span class="nav-text">10. 自动完成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-注释整块内容"><span class="nav-number">1.11.</span> <span class="nav-text">11. 注释整块内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-其他命令"><span class="nav-number">1.12.</span> <span class="nav-text">12. 其他命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查找"><span class="nav-number">1.13.</span> <span class="nav-text">1. 查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-快速移动光标"><span class="nav-number">1.14.</span> <span class="nav-text">2. 快速移动光标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-拷贝-删除与粘贴"><span class="nav-number">1.15.</span> <span class="nav-text">3. 拷贝, 删除与粘贴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-数字与命令"><span class="nav-number">1.16.</span> <span class="nav-text">4. 数字与命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-快速输入字符"><span class="nav-number">1.17.</span> <span class="nav-text">5. 快速输入字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-替换"><span class="nav-number">1.18.</span> <span class="nav-text">6. 替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-多文件编辑"><span class="nav-number">1.19.</span> <span class="nav-text">7. 多文件编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-宏替换"><span class="nav-number">1.20.</span> <span class="nav-text">8. 宏替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-TAB"><span class="nav-number">1.21.</span> <span class="nav-text">9. TAB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-autocmd"><span class="nav-number">1.22.</span> <span class="nav-text">10. autocmd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-常用脚本"><span class="nav-number">1.23.</span> <span class="nav-text">11. 常用脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-常用配置"><span class="nav-number">1.24.</span> <span class="nav-text">12. 常用配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-其他"><span class="nav-number">1.25.</span> <span class="nav-text">13. 其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiang Xue</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
