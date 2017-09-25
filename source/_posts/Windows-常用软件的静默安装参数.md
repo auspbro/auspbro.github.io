@@ -21,7 +21,7 @@ office 2003用/a参数解压；Office 2007 Service Pack补丁包用/extract解�
 * 还可以改软件配置文件，执行静默安装
 如：Total Commander：用winrar解压出来，修改install.inf中auto=1即可自动安装
 * 如果还不行，想办法获取到该软件支持静默安装的版本，或重新打包版本，或用Au3的键盘鼠标自动点击安装吧
-
+<!-- more -->
 ## 二、常用软件静默参数
 个人感觉 InstallShield 封装的执行静默安装不太稳定，有时会莫名的安装失败，也比较占用资源。其它格式的都还可以。如：Google SketchUp 6 用InstallShield 封装的，静默部署失败率让我很头疼。
        1. .msi 格式
