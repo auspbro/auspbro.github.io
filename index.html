@@ -290,6 +290,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://auspbro.github.io/2017/09/25/Windows-常用软件的静默安装参数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xiang Xue">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zen Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/25/Windows-常用软件的静默安装参数/" itemprop="url">Windows 常用软件的静默安装参数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-25T13:26:12+08:00">
+                2017-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="一、如何得到软件的静默安装参数"><a href="#一、如何得到软件的静默安装参数" class="headerlink" title="一、如何得到软件的静默安装参数"></a>一、如何得到软件的静默安装参数</h2><ul>
+<li>软件如果已经安装，到注册表中查询其安装/卸载参数：</li>
+</ul>
+<p>看InstallSource（如果有）和UninstallString的参数内容信息</p>
+<ul>
+<li>第三方软件查询静默安装参数</li>
+<li>手工测试：<br>反正拿到一个安装程序，用/?查询下。<br>如果不支持/?参数，还可以用各静默安装参数试试就知道了（ [/S] [/silent [/noreboot]] [/verysilent [/sp-] [/norestart]] [/q] [/qn] [/qb] [REBOOT=SUPPRESS] [/s /v/qn] [/q:a /r:n] [/u /n /z] [/quiet[/SilentInstallNoSponsor] [/SilentInstall] [/s /qn] [/s /qd] [-s] [-q] 等）<br>这步比较枯燥，但通常都比较有效。</li>
+<li>试完上面的参数，表面上看好像软件不支持静默安装，此时，可以考虑解压安装包：<br>优先测试软件自带方法解压而支持静默安装：如：<br>office 2003用/a参数解压；Office 2007 Service Pack补丁包用/extract解压；ACDSee10 /a解压<br>不支持自带参数解压的用WinRAR或7-ZIP解压安装包，直接提取安装文件，执行静默安装</li>
+<li>还可以改软件配置文件，执行静默安装<br>如：Total Commander：用winrar解压出来，修改install.inf中auto=1即可自动安装</li>
+<li><p>如果还不行，想办法获取到该软件支持静默安装的版本，或重新打包版本，或用Au3的键盘鼠标自动点击安装吧</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/25/Windows-常用软件的静默安装参数/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://auspbro.github.io/2017/09/22/vim使用技巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1487,7 +1620,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
